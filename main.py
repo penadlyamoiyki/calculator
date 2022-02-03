@@ -1,6 +1,7 @@
 import sys
 import modul
 numbers = []
+t = 1
 num3 = ""
 x = "total: "
 numbers.append(int(input("number 1: ")))
