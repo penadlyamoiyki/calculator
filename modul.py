@@ -29,8 +29,8 @@ def faktor(num):
 
 def root(num):
     if num[0] >= 0:
-     x = num[0]
-     num3 = x ** 0.5
-     return num3
-    else:
-        print("root can`t be minus")
+        num3 = num[0] ** 0.5
+        return num3
+    elif num[0] < 0:
+        num3 = ("root can`t be minus")
+        return num3

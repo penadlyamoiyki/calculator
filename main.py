@@ -35,7 +35,9 @@ while operation != "":
  else:
   print("print right operation")
 
- if num3 != "":
+ if num3 != "" and num3 != "root can`t be minus":
     print(x + str(num3))
-
+ elif num3 == "root can`t be minus":
+     print(num3)
+     num3 = 0
  numbers[0] = num3
