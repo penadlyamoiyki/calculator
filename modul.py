@@ -11,11 +11,11 @@ def mult(num):
     return num3
 
 def plus(num):
-    num3 = num[0]+num[1]
+    num3 = num[0] + num[1]
     return num3
 
 def minus(num):
-    num3 = num[0]-num[1]
+    num3 = num[0] - num[1]
     return num3
 
 def faktor(num):
@@ -25,5 +25,12 @@ def faktor(num):
         i += 1
         num3 = i * c
         c = num3
-        print(num3)
     return num3
+
+def root(num):
+    if num[0] >= 0:
+     x = num[0]
+     num3 = x ** 0.5
+     return num3
+    else:
+        print("root can`t be minus")

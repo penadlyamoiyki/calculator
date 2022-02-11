@@ -1,34 +1,41 @@
 import sys
 import modul
-numbers = []
-t = 1
+numbers = [0, 0]
 num3 = ""
 x = "total: "
-numbers.append(int(input("number 1: ")))
-operation = input("operation: ")
-if operation == "!":
+operation = "+"
+numbers[0] = (int(input("number 1: ")))
+while operation != "":
+ operation = input("operation: ")
+ if operation == "!" or operation == "#":
     print("")
-else:
-    numbers.append(int(input("number 2: ")))
+ elif operation != "+" and operation != "-" and operation != "*" and operation != "/" and operation != "!" and operation != "#":
+     print("operation not found")
+ else:
+   numbers[1] = (int(input("number 2: ")))
 
-if operation == "+":
+ if operation == "+":
     num3 = modul.plus(numbers)
 
-elif operation == "-":
+ elif operation == "-":
     num3 = modul.minus(numbers)
 
-elif operation == "*":
+ elif operation == "*":
     num3 = modul.mult(numbers)
 
-elif operation == "/":
+ elif operation == "/":
     num3 = modul.division(numbers)
 
-elif operation == "!":
+ elif operation == "!":
     num3 = modul.faktor(numbers)
 
-else:
-    print("operation not found")
+ elif operation == "#":
+     num3 = modul.root(numbers)
 
-if num3 != "":
+ else:
+  print("print right operation")
+
+ if num3 != "":
     print(x + str(num3))
-#  comment
+
+ numbers[0] = num3
