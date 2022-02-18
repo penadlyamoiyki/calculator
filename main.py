@@ -1,43 +1,33 @@
 import sys
 import modul
-numbers = [0, 0]
+
+from tkinter import *
 num3 = ""
-x = "total: "
-operation = "+"
-numbers[0] = (int(input("number 1: ")))
-while operation != "":
- operation = input("operation: ")
- if operation == "!" or operation == "#":
-    print("")
- elif operation != "+" and operation != "-" and operation != "*" and operation != "/" and operation != "!" and operation != "#":
-     print("operation not found")
- else:
-   numbers[1] = (int(input("number 2: ")))
 
- if operation == "+":
-    num3 = modul.plus(numbers)
+root = Tk()
+root.title("калькультр")
+root.geometry("400x300")
 
- elif operation == "-":
-    num3 = modul.minus(numbers)
+num1 = IntVar()
+num2 = IntVar()
+operation = StringVar()
 
- elif operation == "*":
-    num3 = modul.mult(numbers)
+message_entry_num1 = Entry(textvariable = num1)
+message_entry_num1.place(relx=.5, rely=.1, anchor="c")
 
- elif operation == "/":
-    num3 = modul.division(numbers)
+message_entry_operation = Entry(textvariable =  operation)
+message_entry_operation.place(relx=.5, rely=.3, anchor="c")
 
- elif operation == "!":
-    num3 = modul.faktor(numbers)
+message_entry_num2 = Entry(textvariable = num2)
+message_entry_num2.place(relx=.5, rely=.5, anchor="c")
 
- elif operation == "#":
-     num3 = modul.root(numbers)
+name_label = Label(text = "решение: " + num3)
+name_label.place(relx=.5, rely=.6, anchor="c")
 
- else:
-  print("print right operation")
+message_button = Button(root, text="решить", command=modul.slove(message_entry_num1.get(), message_entry_num2.get(), message_entry_operation.get()))
+#message_button.place(relx=.5, rely=.0, anchor="c")
 
- if num3 != "" and num3 != "root can`t be minus":
-    print(x + str(num3))
- elif num3 == "root can`t be minus":
-     print(num3)
-     num3 = 0
- numbers[0] = num3
+message_button.pack()
+
+
+root.mainloop()
