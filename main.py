@@ -24,7 +24,7 @@ message_entry_num2.place(relx=.5, rely=.5, anchor="c")
 name_label = Label(text = "решение: " + num3)
 name_label.place(relx=.5, rely=.6, anchor="c")
 
-message_button = Button(root, text="решить", command=modul.slove(message_entry_num1.get(), message_entry_num2.get(), message_entry_operation.get()))
+message_button = Button(root, text="решить", command=lambda: modul.slove(message_entry_num1.get(), message_entry_num2.get(), message_entry_operation.get()))
 #message_button.place(relx=.5, rely=.0, anchor="c")
 
 message_button.pack()
