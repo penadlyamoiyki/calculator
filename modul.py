@@ -1,21 +1,18 @@
 def slove(num1, num2, operation):
+      try:
+       num1 = int(num1)
+       num2 = int(num2)
+      except:
+          num3 = num1 + " " + operation + " " +num2
+          return num3
+
       x = "total: "
       num3 = ""
       print(num1)
       print(num2)
       print(operation)
-    #operation = "+"
-    #num1 = (int(input("number 1: ")))
-    #while operation != "":
-      #operation = input("operation: ")
-      if operation == "" and num1 == "0" and num2 == "0":
-          print("da")
-      if operation == "!" or operation == "#":
-            print("")
-      else: # operation != "+" and operation != "-" and operation != "*" and operation != "/" and operation != "!" and operation != "#":
-            print("operation not found")
-      #else:
-          # num2 = (int(input("number 2: ")))
+      if operation != "+" and operation != "-" and operation != "*" and operation != "/" and operation != "!" and operation != "#":
+            num3 = "operation not found"
 
       if operation == "+":
         num3 = plus(num1, num2)
@@ -35,16 +32,12 @@ def slove(num1, num2, operation):
       elif operation == "#":
         num3 = root(num1)
 
-      else:
-        print("print right operation")
-
       if num3 != "" and num3 != "root can`t be minus":
             print(x + str(num3))
       elif num3 == "root can`t be minus":
             print(num3)
-            num3 = 0
-      num1 = num3
-    
+      return num3
+
 def division(num1, num2):
     num3=""
     if num2 == 0:
